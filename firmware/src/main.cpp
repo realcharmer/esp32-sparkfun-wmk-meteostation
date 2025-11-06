@@ -1,9 +1,9 @@
 #include <Arduino.h>
 #include "Anemometer.h"
-#include "Wind.h"
+#include "WindVane.h"
 
 Anemometer anemometer(14);
-Wind windSensor(35);
+WindVane windVane(35);
 
 void setup() {
 	Serial.begin(115200);
@@ -14,7 +14,7 @@ void setup() {
 void loop() {
 
 	Serial.print("Direction: ");
-	Serial.println(windSensor.getDirection());
+	Serial.println(windVane.getDirection());
 
 	anemometer.update();
 	uint16_t ws = anemometer.getWindSpeed();

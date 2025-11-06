@@ -1,11 +1,11 @@
 #include <Arduino.h>
-#include "Wind.h"
+#include "WindVane.h"
 
-Wind::Wind(int vanePin) {
+WindVane::WindVane(int vanePin) {
 	_vanePin = vanePin;
 }
 
-int Wind::getDirection() {
+int WindVane::getDirection() {
 	int raw = analogRead(_vanePin);
 	int minDiff = 4096;
 	int minIndex = 0;

@@ -1,9 +1,9 @@
 #ifndef WIND_H
 #define WIND_H
 
-class Wind {
+class WindVane {
 public:
-	Wind(int vanePin);
+	WindVane(int vanePin);
 	int getDirection();
 private:
 	int _vanePin;
