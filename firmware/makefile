@@ -15,4 +15,7 @@ clean:
 monitor:
 	$(PLATFORMIO_BIN) device monitor
 
-.PHONY: all build upload clean monitor
+test:
+	$(PLATFORMIO_BIN) test
+
+.PHONY: all build upload clean monitor test

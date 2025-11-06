@@ -5,8 +5,7 @@ WindVane::WindVane(int vanePin) {
 	_vanePin = vanePin;
 }
 
-int WindVane::getDirection() {
-	int raw = analogRead(_vanePin);
+int WindVane::getDirectionFromADC(int raw) {
 	int minDiff = 4096;
 	int minIndex = 0;
 	for (int i = 0; i < 8; i++) {
@@ -18,4 +17,9 @@ int WindVane::getDirection() {
 		}
 	}
 	return WIND_DIRECTION[minIndex];
+}
+
+int WindVane::getDirection() {
+	int raw = analogRead(_vanePin);
+	return getDirectionFromADC(raw);
 }
